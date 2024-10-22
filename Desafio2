@@ -1,0 +1,18 @@
+def desafio2(valores):
+    try:
+        suma = sum(valores)
+        promedio = suma / len(valores)
+        multiplicacion = 1
+        for v in valores:
+            multiplicacion *= v
+        print(f"Suma: {suma}, Promedio: {promedio}, Multiplicación: {multiplicacion}")
+    except ZeroDivisionError:
+        print("Error: No se puede calcular el promedio, la lista está vacía.")
+    except TypeError:
+        print("Error: La lista contiene elementos no numéricos.")
+    except ValueError:
+        print("Error: Ocurrió un problema con los valores en la lista.")
+    else:
+        print("Operaciones completadas con éxito.")
+
+desafio2([1, 2, 3, 4])
