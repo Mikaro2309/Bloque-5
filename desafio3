@@ -1,0 +1,17 @@
+import math
+
+def calcular_factorial(numero):
+    try:
+        if not isinstance(numero, int):
+            raise ValueError("Error: El número debe ser un entero.")
+        if numero < 0:
+            raise ValueError("Error: No se puede calcular el factorial de un número negativo.")
+        if numero > 1000:
+            raise OverflowError("Error: El número es demasiado grande para procesar.")
+        return math.factorial(numero)
+    except ValueError as ve:
+        print(ve)
+    except OverflowError as oe:
+        print(oe)
+
+print(calcular_factorial(5))
