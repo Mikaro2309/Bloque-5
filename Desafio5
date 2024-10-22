@@ -1,0 +1,16 @@
+def leer_archivo(nombre_archivo):
+    try:
+        archivo = open(nombre_archivo, 'r')
+        contenido = archivo.read()
+        print(contenido)
+    except FileNotFoundError:
+        print("Error: El archivo no existe.")
+    except IOError:
+        print("Error: Ocurrió un problema al leer el archivo.")
+    finally:
+        try:
+            archivo.close()
+        except NameError:
+            pass
+
+leer_archivo("archivo_inexistente.txt")
