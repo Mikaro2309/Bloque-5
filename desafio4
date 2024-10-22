@@ -1,0 +1,14 @@
+import math
+
+class NegativeNumberError(Exception):
+    pass
+
+def raiz_cuadrada(numero):
+    try:
+        if numero < 0:
+            raise NegativeNumberError("Error: No se puede calcular la raíz cuadrada de un número negativo.")
+        return math.sqrt(numero)
+    except NegativeNumberError as ne:
+        print(ne)
+
+raiz_cuadrada(-9)
